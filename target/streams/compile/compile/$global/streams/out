@@ -1,0 +1,8 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Philip\IdeaProjects\beginner-app\app\controllers\MemberController.java:13:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   class Member[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class controllers.MemberController[0m
+[0m[[0m[31merror[0m] [0m[0m        List<Member> members = Member.findAll();[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Philip\IdeaProjects\beginner-app\app\controllers\MemberController.java:13:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   variable Member[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class controllers.MemberController[0m
+[0m[[0m[31merror[0m] [0m[0m        List<Member> members = Member.findAll();[0m

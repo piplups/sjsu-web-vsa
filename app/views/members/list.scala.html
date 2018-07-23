@@ -1,0 +1,27 @@
+@(members: List[Member]) <!-- the parameter list, name_of_param : type_of_parameter. (This is Scala code)-->
+<!-- the list template -->
+@main("VSA Members") { <!-- this line calls another template, the one called main -->
+                       <!-- underneath this tag will be the <body> tad of our rendered HTML page -->
+                       <!-- the "at"s are Scala expressions-->
+<h2>All Members</h2>
+    <table class = "table table-striped">
+        <thead>
+            <tr>
+                <th>SID</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+        @for(member <- members) {
+            <tr>
+                <td><a href="@routes.MemberController.details(member.SID)">@member.SID</a></td>
+                <td><a href="@routes.MemberController.details(member.SID)">@member.lastName</a></td>
+                <td><a href="@routes.MemberController.details(member.SID)">@member.firstName</a></td>
+                <td><a href="@routes.MemberController.details(member.SID)">@member.description</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

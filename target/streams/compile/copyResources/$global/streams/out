@@ -1,0 +1,4 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Philip\IdeaProjects\beginner-app\conf\application.conf,C:\Users\Philip\IdeaProjects\beginner-app\target\scala-2.12\classes\application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Philip\IdeaProjects\beginner-app\conf\logback.xml,C:\Users\Philip\IdeaProjects\beginner-app\target\scala-2.12\classes\logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\Philip\IdeaProjects\beginner-app\conf\routes,C:\Users\Philip\IdeaProjects\beginner-app\target\scala-2.12\classes\routes)[0m
