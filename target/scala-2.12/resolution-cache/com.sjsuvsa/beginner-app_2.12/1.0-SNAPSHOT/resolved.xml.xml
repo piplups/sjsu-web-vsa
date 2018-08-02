@@ -4,7 +4,7 @@
 		module="beginner-app_2.12"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20180620232315"
+		publication="20180731224535"
 	>
 		<description>
 		beginner-app
@@ -50,5 +50,6 @@
 		<dependency org="com.typesafe.play" name="play-logback_2.12" rev="2.6.15" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-akka-http-server_2.12" rev="2.6.15" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-guice_2.12" rev="2.6.15" conf="compile->default(compile)"/>
+		<dependency org="com.h2database" name="h2" rev="1.4.192" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

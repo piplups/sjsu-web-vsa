@@ -7,8 +7,20 @@
 		revision="1.0-SNAPSHOT"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, universal, universal-docs, universal-src, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, docs"
-		date="20180620232315"/>
+		date="20180731224536"/>
 	<dependencies>
+		<module organisation="com.h2database" name="h2">
+			<revision name="1.4.192" status="release" pubdate="20160526002838" resolver="public" artresolver="public" homepage="http://www.h2database.com" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="64">
+				<license name="MPL 2.0 or EPL 1.0" url="http://h2database.com/html/license.html"/>
+				<metadata-artifact status="successful" details="" size="960" time="93" location="C:\Users\Philip\.ivy2\cache\com.h2database\h2\ivy-1.4.192.xml" searched="true" original-local-location="C:\Users\Philip\.ivy2\cache\com.h2database\h2\ivy-1.4.192.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/h2database/h2/1.4.192/h2-1.4.192.pom"/>
+				<caller organisation="com.sjsuvsa" name="beginner-app_2.12" conf="compile, runtime-internal, runtime, optional" rev="1.4.192" rev-constraint-default="1.4.192" rev-constraint-dynamic="1.4.192" callerrev="1.0-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="h2" type="jar" ext="jar" status="successful" details="" size="1775801" time="1463" location="C:\Users\Philip\.ivy2\cache\com.h2database\h2\jars\h2-1.4.192.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/h2database/h2/1.4.192/h2-1.4.192.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="com.typesafe.play" name="play-akka-http-server_2.12">
 			<revision name="2.6.15" status="release" pubdate="20180524184817" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" extra-info.apiURL="https://www.playframework.com/documentation/2.6.15/api/scala/index.html" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="57">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>

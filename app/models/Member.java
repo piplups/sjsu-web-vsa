@@ -3,21 +3,31 @@ package models;
 import java.util.ArrayList;
 import java.util.List;
 
+enum MemberType { regular, admin }
+enum Family { none, blue, green, red, yellow }
+
 public class Member {
     public String firstName;
     public String lastName;
     public String SID;          //SID: 010845869
     public String description;
+    public String major;
+    public MemberType type;
+    public Family fam;
     public double volunteerHours;
     // why are the attributes public?
 
     public Member() {}
 
-    public Member (String f, String l, String s, String d) {
-        this.firstName = f;
+    public Member (String fi, String l, String s, String d, String m, MemberType t, Family fa) {
+        this.firstName = fi;
         this.lastName = l;
         this.SID = s;
         this.description = d;
+        this.major = m;
+        this.type = t;
+        this.fam = fa;
+        this.volunteerHours = 0;
     }
     public String toString() {
         return String.format("%s, %s\n%s\n%s", lastName, firstName, SID, description);
@@ -34,7 +44,7 @@ public class Member {
         members.add(new Member("Jenny", "Nguyen", "000000002", "SJSU VSA Co-Prezi 2018-19, UVSA Summit Executive Director"));
         members.add(new Member("Philip", "Nguyen", "000000003", "SJSU VSA Webmaster"));
         members.add(new Member("E.J.", "Brand", "000000004", "SJSU VSA Webmaster"));
-        members.add(new Member("Hieu Minh", "Tran", "000000005", "EVO Competitior"));
+        members.add(new Member("Hieu Minh", "Tran", "000000005", "EVO Competitor"));
     }
     //for practice *NEVER DO THIS IRL*
     public static List<Member> findAll() {
