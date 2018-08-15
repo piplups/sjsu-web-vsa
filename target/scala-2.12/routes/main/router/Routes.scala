@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Philip/IdeaProjects/beginner-app/conf/routes
-// @DATE:Fri Jun 22 19:03:50 PDT 2018
+// @DATE:Tue Aug 14 19:34:13 PDT 2018
 
 package router
 
@@ -47,8 +47,10 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """members/""", """controllers.MemberController.list()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """members/new""", """controllers.MemberController.newMember()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """members/""" + "$" + """id<[^/]+>""", """controllers.MemberController.details(id:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """members/""" + "$" + """userName<[^/]+>""", """controllers.MemberController.details(userName:String)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """members/""", """controllers.MemberController.save()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """members/edit""", """controllers.MemberController.update()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """members/delete/""" + "$" + """userName<[^/]+>""", """controllers.MemberController.destroy(userName:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -130,7 +132,7 @@ class Routes(
 
   // @LINE:14
   private[this] lazy val controllers_MemberController_details4_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("members/"), DynamicPart("id", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("members/"), DynamicPart("userName", """[^/]+""",true)))
   )
   private[this] lazy val controllers_MemberController_details4_invoker = createInvoker(
     MemberController_2.details(fakeValue[String]),
@@ -140,13 +142,13 @@ class Routes(
       "details",
       Seq(classOf[String]),
       "GET",
-      this.prefix + """members/""" + "$" + """id<[^/]+>""",
+      this.prefix + """members/""" + "$" + """userName<[^/]+>""",
       """""",
       Seq()
     )
   )
 
-  // @LINE:15
+  // @LINE:16
   private[this] lazy val controllers_MemberController_save5_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("members/")))
   )
@@ -159,6 +161,42 @@ class Routes(
       Nil,
       "POST",
       this.prefix + """members/""",
+      """""",
+      Seq("""nocsrf""")
+    )
+  )
+
+  // @LINE:17
+  private[this] lazy val controllers_MemberController_update6_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("members/edit")))
+  )
+  private[this] lazy val controllers_MemberController_update6_invoker = createInvoker(
+    MemberController_2.update(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.MemberController",
+      "update",
+      Nil,
+      "POST",
+      this.prefix + """members/edit""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:18
+  private[this] lazy val controllers_MemberController_destroy7_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("members/delete/"), DynamicPart("userName", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_MemberController_destroy7_invoker = createInvoker(
+    MemberController_2.destroy(fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.MemberController",
+      "destroy",
+      Seq(classOf[String]),
+      "GET",
+      this.prefix + """members/delete/""" + "$" + """userName<[^/]+>""",
       """""",
       Seq()
     )
@@ -193,14 +231,26 @@ class Routes(
   
     // @LINE:14
     case controllers_MemberController_details4_route(params@_) =>
-      call(params.fromPath[String]("id", None)) { (id) =>
-        controllers_MemberController_details4_invoker.call(MemberController_2.details(id))
+      call(params.fromPath[String]("userName", None)) { (userName) =>
+        controllers_MemberController_details4_invoker.call(MemberController_2.details(userName))
       }
   
-    // @LINE:15
+    // @LINE:16
     case controllers_MemberController_save5_route(params@_) =>
       call { 
         controllers_MemberController_save5_invoker.call(MemberController_2.save())
+      }
+  
+    // @LINE:17
+    case controllers_MemberController_update6_route(params@_) =>
+      call { 
+        controllers_MemberController_update6_invoker.call(MemberController_2.update())
+      }
+  
+    // @LINE:18
+    case controllers_MemberController_destroy7_route(params@_) =>
+      call(params.fromPath[String]("userName", None)) { (userName) =>
+        controllers_MemberController_destroy7_invoker.call(MemberController_2.destroy(userName))
       }
   }
 }

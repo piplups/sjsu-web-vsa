@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Philip/IdeaProjects/beginner-app/conf/routes
-// @DATE:Fri Jun 22 19:03:50 PDT 2018
+// @DATE:Tue Aug 14 19:34:13 PDT 2018
 
 
 package router {

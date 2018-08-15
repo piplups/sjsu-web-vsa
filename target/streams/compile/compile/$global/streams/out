@@ -1,8 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Philip\IdeaProjects\beginner-app\app\controllers\MemberController.java:13:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class Member[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class controllers.MemberController[0m
-[0m[[0m[31merror[0m] [0m[0m        List<Member> members = Member.findAll();[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Philip\IdeaProjects\beginner-app\app\controllers\MemberController.java:13:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   variable Member[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class controllers.MemberController[0m
-[0m[[0m[31merror[0m] [0m[0m        List<Member> members = Member.findAll();[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Philip\IdeaProjects\beginner-app\app\views\members\create.scala.html:7:22: value formfield is not a member of object views.html.helper.CSRF[0m
+[0m[[0m[31merror[0m] [0m[0m        @helper.CSRF.formfield[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

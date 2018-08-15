@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Philip/IdeaProjects/beginner-app/conf/routes
-// @DATE:Fri Jun 22 19:03:50 PDT 2018
+// @DATE:Tue Aug 14 19:34:13 PDT 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -19,12 +19,12 @@ package controllers.javascript {
     }
 
   
-    // @LINE:14
-    def details: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.MemberController.details",
+    // @LINE:18
+    def destroy: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MemberController.destroy",
       """
-        function(id0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "members/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
+        function(userName0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "members/delete/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("userName", userName0))})
         }
       """
     )
@@ -39,12 +39,12 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:15
-    def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.MemberController.save",
+    // @LINE:14
+    def details: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MemberController.details",
       """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "members/"})
+        function(userName0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "members/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("userName", userName0))})
         }
       """
     )
@@ -55,6 +55,26 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "members/"})
+        }
+      """
+    )
+  
+    // @LINE:16
+    def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MemberController.save",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "members/"})
+        }
+      """
+    )
+  
+    // @LINE:17
+    def update: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MemberController.update",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "members/edit"})
         }
       """
     )

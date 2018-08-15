@@ -9,7 +9,10 @@ GET     /                           controllers.HomeController.index
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 # Member Routing
-GET     /members/          controllers.MemberController.list()
-GET     /members/new       controllers.MemberController.newMember()
-GET     /members/:id       controllers.MemberController.details(id:String)
-POST    /members/          controllers.MemberController.save()
+GET     /members/                   controllers.MemberController.list()
+GET     /members/new                controllers.MemberController.newMember()
+GET     /members/:userName          controllers.MemberController.details(userName: String)
++ nocsrf
+POST    /members/                   controllers.MemberController.save()
+POST    /members/edit               controllers.MemberController.update()
+GET     /members/delete/:userName   controllers.MemberController.destroy(userName: String)

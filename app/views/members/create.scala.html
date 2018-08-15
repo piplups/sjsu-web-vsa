@@ -1,0 +1,17 @@
+@(memberForm : Form[Member])
+@import helper._
+
+@main("Member Signup") {
+    <h1>Member Signup</h1>
+    @helper.form(action = routes.MemberController.save()){
+        
+
+        @helper.inputText(memberForm("firstName"))
+        @helper.inputText(memberForm("lastName"))
+        @helper.inputText(memberForm("userName"))
+        @helper.inputText(memberForm("SID"))
+        @helper.textarea(memberForm("description"))
+        <input type="submit" value="Register" class="btn btn-primary">
+        }
+
+}

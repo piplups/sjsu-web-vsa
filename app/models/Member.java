@@ -2,6 +2,8 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 
 enum MemberType { regular, admin }
 enum Family { none, blue, green, red, yellow }
@@ -9,9 +11,10 @@ enum Family { none, blue, green, red, yellow }
 public class Member {
     public String firstName;
     public String lastName;
+    public String userName;
     public String SID;          //SID: 010845869
     public String description;
-    public String major;
+    //public String major;
     public MemberType type;
     public Family fam;
     public double volunteerHours;
@@ -19,16 +22,16 @@ public class Member {
 
     public Member() {}
 
-    public Member (String fi, String l, String s, String d, String m, MemberType t, Family fa) {
+    public Member (String fi, String l, String u, String s, String d){//}, MemberType t) {
         this.firstName = fi;
         this.lastName = l;
+        this.userName = u;
         this.SID = s;
         this.description = d;
-        this.major = m;
-        this.type = t;
-        this.fam = fa;
+        //this.type = t;
         this.volunteerHours = 0;
     }
+
     public String toString() {
         return String.format("%s, %s\n%s\n%s", lastName, firstName, SID, description);
     }
@@ -40,14 +43,63 @@ public class Member {
     private static List<Member> members;
     static {
         members = new ArrayList<Member>();
-        members.add(new Member("Nicole", "Phan", "000000001", "SJSU VSA Co-Prezi 2018-19"));
-        members.add(new Member("Jenny", "Nguyen", "000000002", "SJSU VSA Co-Prezi 2018-19, UVSA Summit Executive Director"));
-        members.add(new Member("Philip", "Nguyen", "000000003", "SJSU VSA Webmaster"));
-        members.add(new Member("E.J.", "Brand", "000000004", "SJSU VSA Webmaster"));
-        members.add(new Member("Hieu Minh", "Tran", "000000005", "EVO Competitor"));
+        members.add(new Member("Nicole", "Phan", "phvntastic", "000000001", "SJSU VSA Co-Prezi 2018-19"));
+        members.add(new Member("Jenny", "Nguyen", "bubblyj", "000000002", "SJSU VSA Co-Prezi 2018-19, UVSA Summit Executive Director"));
+        members.add(new Member("Philip", "Nguyen", "piplups", "000000003", "SJSU VSA Webmaster"));
+        members.add(new Member("E.J.", "Brand", "ejb", "000000004", "SJSU VSA Webmaster"));
+        members.add(new Member("Hieu Minh", "Tran", "hieuypoo", "000000005", "EVO Competitor"));
     }
     //for practice *NEVER DO THIS IRL*
-    public static List<Member> findAll() {
+    /*private static Set<Member> membersSet;
+
+    static {
+        membersSet = new HashSet<>();
+        membersSet.add(new Member("Nicole", "Phan", "phvntastic", "000000001", "SJSU VSA Co-Prezi 2018-19", type.admin));
+        membersSet.add(new Member("Jenny", "Nguyen", "bubblyj", "000000002", "SJSU VSA Co-Prezi 2018-19, UVSA Summit Executive Director", type.admin));
+        membersSet.add(new Member("Philip", "Nguyen", "piplups", "000000003", "SJSU VSA Webmaster", type.admin));
+
+    }
+    public static Set<Member> everyMembers(){
+        return membersSet;
+    }
+    private static List<Member> members;
+    static {
+        members = new ArrayList<Member>();
+        members.add(new Member("Nicole", "Phan", "phvntastic", "000000001", "SJSU VSA Co-Prezi 2018-19", type.admin));
+        members.add(new Member("Jenny", "Nguyen", "bubblyj", "000000002", "SJSU VSA Co-Prezi 2018-19, UVSA Summit Executive Director", type.admin));
+        members.add(new Member("Philip", "Nguyen", "piplups", "000000003", "SJSU VSA Webmaster", type.admin));
+        members.add(new Member("E.J.", "Brand", "ejbrand", "000000004", "SJSU VSA Webmaster", type.admin));
+        members.add(new Member("Hieu Minh", "Tran", "hieuypoo", "000000005", "EVO Competitor", type.regular));
+        members.add(new Member("Edward", "Lee", "edlee", "000000006", "SJSU VSA Web Project Manager", type.admin));
+    }*/
+
+    public static List<Member> allMembers(){return members;}
+
+    public static void add(Member member){
+        members.add(member);
+    }
+    public static boolean remove(Member member){
+        return members.remove(member);
+    }
+    /*public static Member findByUserName(String userName)
+    {
+        for (Member member : members){
+            if(id.equals(member.userName)){
+                return member;
+            }
+        }
+        return null;
+    }
+
+    public static void add(Member member){
+        members.add(member);
+    }
+
+    public static boolean remove(Member member){
+        return members.remove(member);
+    }
+    */
+    /*public static List<Member> findAll() {
         return new ArrayList<Member>(members);
     }
 
@@ -75,7 +127,7 @@ public class Member {
     public void save() {
         members.remove(findByName(this.SID));
         members.add(this);
-    }
+    }*/
 
 
 }

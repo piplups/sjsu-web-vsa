@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Philip/IdeaProjects/beginner-app/conf/routes
-// @DATE:Fri Jun 22 19:03:50 PDT 2018
+// @DATE:Tue Aug 14 19:34:13 PDT 2018
 
 import play.api.mvc.Call
 
@@ -18,10 +18,10 @@ package controllers {
     }
 
   
-    // @LINE:14
-    def details(id:String): Call = {
+    // @LINE:18
+    def destroy(userName:String): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "members/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("id", id)))
+      Call("GET", _prefix + { _defaultPrefix } + "members/delete/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("userName", userName)))
     }
   
     // @LINE:13
@@ -30,16 +30,28 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "members/new")
     }
   
-    // @LINE:15
-    def save(): Call = {
+    // @LINE:14
+    def details(userName:String): Call = {
       
-      Call("POST", _prefix + { _defaultPrefix } + "members/")
+      Call("GET", _prefix + { _defaultPrefix } + "members/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("userName", userName)))
     }
   
     // @LINE:12
     def list(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "members/")
+    }
+  
+    // @LINE:16
+    def save(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "members/")
+    }
+  
+    // @LINE:17
+    def update(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "members/edit")
     }
   
   }
