@@ -22,21 +22,21 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object create extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Form[Member],play.twirl.api.HtmlFormat.Appendable] {
+object create extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Form[MemberData],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(memberForm : Form[Member]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(memberForm : Form[MemberData]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 /*2.2*/import helper._
 
 
-Seq[Any](format.raw/*1.29*/("""
+Seq[Any](format.raw/*1.33*/("""
 """),format.raw/*3.1*/("""
 """),_display_(/*4.2*/main("Member Signup")/*4.23*/ {_display_(Seq[Any](format.raw/*4.25*/("""
     """),format.raw/*5.5*/("""<h1>Member Signup</h1>
-    """),_display_(/*6.6*/helper/*6.12*/.form(action = routes.MemberController.save())/*6.58*/{_display_(Seq[Any](format.raw/*6.59*/("""
-        
+    """),_display_(/*6.6*/helper/*6.12*/.form(action = routes.MemberController.newMember())/*6.63*/{_display_(Seq[Any](format.raw/*6.64*/("""
+
 
         """),_display_(/*9.10*/helper/*9.16*/.inputText(memberForm("firstName"))),format.raw/*9.51*/("""
         """),_display_(/*10.10*/helper/*10.16*/.inputText(memberForm("lastName"))),format.raw/*10.50*/("""
@@ -52,9 +52,9 @@ Seq[Any](format.raw/*1.29*/("""
     }
   }
 
-  def render(memberForm:Form[Member]): play.twirl.api.HtmlFormat.Appendable = apply(memberForm)
+  def render(memberForm:Form[MemberData]): play.twirl.api.HtmlFormat.Appendable = apply(memberForm)
 
-  def f:((Form[Member]) => play.twirl.api.HtmlFormat.Appendable) = (memberForm) => apply(memberForm)
+  def f:((Form[MemberData]) => play.twirl.api.HtmlFormat.Appendable) = (memberForm) => apply(memberForm)
 
   def ref: this.type = this
 
@@ -63,10 +63,10 @@ Seq[Any](format.raw/*1.29*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Aug 14 19:34:12 PDT 2018
+                  DATE: Tue Aug 14 22:06:04 PDT 2018
                   SOURCE: C:/Users/Philip/IdeaProjects/beginner-app/app/views/members/create.scala.html
-                  HASH: e7a14c1bdd27152323252ea71dca891416885837
-                  MATRIX: 963->1|1063->31|1108->28|1136->48|1164->51|1193->72|1232->74|1264->80|1318->109|1332->115|1386->161|1424->162|1473->185|1487->191|1542->226|1580->237|1595->243|1650->277|1688->288|1703->294|1758->328|1796->339|1811->345|1861->374|1899->385|1914->391|1971->427|2008->437|2112->510|2147->515
+                  HASH: 3740f8d0ded34625e587226ff87e9b6a9f5e4c51
+                  MATRIX: 967->1|1071->35|1116->32|1144->52|1172->55|1201->76|1240->78|1272->84|1326->113|1340->119|1399->170|1437->171|1478->186|1492->192|1547->227|1585->238|1600->244|1655->278|1693->289|1708->295|1763->329|1801->340|1816->346|1866->375|1904->386|1919->392|1976->428|2013->438|2117->511|2152->516
                   LINES: 28->1|31->2|34->1|35->3|36->4|36->4|36->4|37->5|38->6|38->6|38->6|38->6|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|44->12|44->12|44->12|45->13|45->13|45->13|46->14|47->15|49->17
                   -- GENERATED --
               */

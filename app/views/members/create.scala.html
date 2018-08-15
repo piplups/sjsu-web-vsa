@@ -1,10 +1,10 @@
-@(memberForm : Form[Member])
+@(memberForm : Form[MemberData])
 @import helper._
 
 @main("Member Signup") {
     <h1>Member Signup</h1>
-    @helper.form(action = routes.MemberController.save()){
-        
+    @helper.form(action = routes.MemberController.newMember()){
+
 
         @helper.inputText(memberForm("firstName"))
         @helper.inputText(memberForm("lastName"))
